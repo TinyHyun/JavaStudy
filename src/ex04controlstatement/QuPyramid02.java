@@ -13,6 +13,7 @@ public class QuPyramid02 {
 			*
 		*/
 		
+		System.out.println("Me");
 		int a1 = 5;
 		do {
 			int b = 5;
@@ -26,6 +27,19 @@ public class QuPyramid02 {
 			System.out.println();
 		}while(a1>=1);
 		
+		
+		
+		System.out.println("T");
+		int i = 5;
+		do {
+			int j = 1;
+			do {
+				System.out.print("*");
+				j++;
+			}while(j <= i);
+			System.out.println();
+			i--;
+		}while(i >= 1);
 	}
 
 }
