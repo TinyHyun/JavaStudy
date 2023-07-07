@@ -7,51 +7,115 @@ package ex08class;
 init() 멤버메소드에서는 계산의 결과를 카운트하는 멤버변수를 0으로 초기화 한다.
 */
 
+//class CalculatorEx{
+//	
+//	double num1;
+//	double num2;
+//	
+//	int addCount;
+//	int minCount;
+//	int mulCount;
+//	int divCount;
+//	
+//	void init() {
+//		addCount = 0;
+//		minCount = 0;
+//		mulCount = 0;
+//		divCount = 0;
+//	}
+//	
+//	double add(double num1 , double num2) {
+//		addCount++;
+//		return(num1+num2);
+//	}
+//	
+//	double min(double num1 , double num2) {
+//		minCount++;
+//		return(num1-num2);
+//	}
+//	
+//	double mul(double num1 , double num2) {
+//		mulCount++;
+//		return(num1*num2);
+//	}
+//	
+//	double div(double num1 , double num2) {
+//		divCount++;
+//		return(num1/num2);
+//	}
+//
+//
+//	void showOpCount() {
+//		System.out.println("덧셈회수: "+ addCount);
+//		System.out.println("뺄샘회수: "+ minCount);
+//		System.out.println("곱셈회수: "+ mulCount);
+//		System.out.println("나눗셈회수: "+ divCount);
+//	}
+//}
+
+//////////////////////////////////////T//////////////////////////////////////////////////////
+
 class CalculatorEx{
 	
-	double num1;
-	double num2;
-	
+	//멤버변수: 연산의 횟수 카운트
 	int addCount;
 	int minCount;
 	int mulCount;
 	int divCount;
 	
+	
+	//디폴트 생성자
+	public CalculatorEx() {}
+	
+	
+	//초기화 메서드: 연산의 횟수를 0으로 초기화한다.
 	void init() {
 		addCount = 0;
 		minCount = 0;
 		mulCount = 0;
 		divCount = 0;
-	}
-	
-	double add(double num1 , double num2) {
+	} 
+
+	//덧셈연산
+	double add(double n1, double n2) {
+		//연산횟수 1증가
 		addCount++;
-		return(num1+num2);
+		return n1+n2;
 	}
 	
-	double min(double num1 , double num2) {
+	//뺄셈연산
+	double min(double n1, double n2) {
+		//연산횟수 1증가
 		minCount++;
-		return(num1-num2);
+		return n1-n2;
 	}
 	
-	double mul(double num1 , double num2) {
+	//곱셈연산
+	double mul(double n1, double n2) {
+		//연산횟수 1증가
 		mulCount++;
-		return(num1*num2);
+		return n1*n2;
 	}
 	
-	double div(double num1 , double num2) {
+	//나눗셈연산
+	double div(double n1, double n2) {
+		//연산횟수 1증가
 		divCount++;
-		return(num1/num2);
+		return n1/n2;
 	}
-
-
+	
 	void showOpCount() {
-		System.out.println("덧셈회수: "+ addCount);
-		System.out.println("뺄샘회수: "+ minCount);
-		System.out.println("곱셈회수: "+ mulCount);
-		System.out.println("나눗셈회수: "+ divCount);
+		StringBuffer sb = new StringBuffer();
+		sb.append("\n덧셈횟수: "+addCount);
+		sb.append("\n뺄셈횟수: "+minCount);
+		sb.append("\n곱셈횟수: "+mulCount);
+		sb.append("\n나눗셈횟수: "+divCount);
+		System.out.println(sb);
 	}
+
 }
+
+
 
 public class QuSimpleCalculator {
 

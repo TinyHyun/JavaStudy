@@ -7,28 +7,69 @@ package ex08class;
  
 */
 
+//class Triangle{
+//	
+//	double bottom;
+//	double height;
+//	
+//	void init(double b, double h) {
+//		bottom = b;
+//		height = h;
+//	}
+//	
+//	void setBottom(double newb) {
+//		bottom = newb;
+//	}	
+//	
+//	void setHeight(double newh) {
+//		height = newh;
+//	}
+//	
+//	double getArea() {
+//		return (bottom*height)/2;
+//	}
+//}
+
+///////////////////////////////////////////////T//////////////////////////////////////////////
+
+
 class Triangle{
 	
-	double bottom;
-	double height;
+	//개발자가 생성자를 별도로 선언하지 않으면 디폴트 생성자는 자동으로 생성된다. 
+	//디폴트 생성자는 아래와 같이 매개변수도 없고 실행부도 없는 형태이다.
+	//public Triangle(){}
 	
-	void init(double b, double h) {
-		bottom = b;
-		height = h;
+	
+	//멤버변수
+	int bottom; //밑변
+	int height; //높이
+	
+	//초기화메서드: 멤버변수를 초기화한다.
+	void init(int bot, int height){
+		//매개변수와 멤버변수명이 다르면 this가 없어도 된다.
+		bottom = bot;
+		//만약 이름이 같다면 멤버변수를 가리키는 this를 추가한다.
+		this.height = height;
 	}
 	
-	void setBottom(double newb) {
-		bottom = newb;
-	}	
-	
-	void setHeight(double newh) {
-		height = newh;
-	}
-	
+	//삼각형의 넒이(밑변*높이 * 1/2)
+	//삼각형의 넓이는 0.5를 곱하는 연산, 즉 실수의 결과가 나올 확률이 높으므로 반환타입은 double로 하는것이 좋다.
 	double getArea() {
-		return (bottom*height)/2;
+		return bottom * height * 0.5;
+	}
+	
+	//밑변과 높이를 설정하는 멤버 메서드
+	void setBottom(int bottom) {
+		this.bottom = bottom;
+	}
+	
+	void setHeight(int height) {
+		this.height = height;
 	}
 }
+
+
+
 
 public class QuTriangle {
 
