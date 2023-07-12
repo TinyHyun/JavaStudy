@@ -1,5 +1,5 @@
 package ex12inheritance;
-import java.awt.geom.Area;
+
 /*
 문제3) QuRectangleMain.java
 정사각형을 의미하는 Square클래스와 직사각형을 의미하는 Rectangle클래스를 정의하고자 한다.
@@ -8,6 +8,7 @@ import java.awt.geom.Area;
 직사각형 면적: 12
 정사각형 면적: 49
 */
+
 //직사각형을 표현한 클래스
 class Rectangle {
 	

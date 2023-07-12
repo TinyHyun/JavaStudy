@@ -1,4 +1,5 @@
 package ex12inheritance;
+
 /*
 문제4) QuRingMake.java
 다음 Point클래스를 이용하여 다음 문제를 해결하시오.
@@ -16,6 +17,7 @@ Point 클래스를 기반으로 원을 의미하는 Circle클래스를 정의하
 반지름 : 9
 [x좌표:2, y좌표2]
 */
+
 class Point {
 	int xDot, yDot;
 	public Point(int x, int y) {
