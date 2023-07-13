@@ -6,6 +6,7 @@ package ex13interface;
 	메서드인 경우 public abstract 제거
 	멤버변수인 경우 public static final 제거
 */
+//interface는 실행부를 만들수 없다. 만들면 바로 에러발생
 interface PersonalNumberStroage {
 	//정보를 저장하는 기능의 추상메서드
 	void addPersonalInfo(String juminNum, String name);
