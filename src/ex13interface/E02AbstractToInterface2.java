@@ -53,11 +53,11 @@ extends는 "상속"이라 표현하고, implements는 "구현"이라 표현한�
 class PersonalNumberStorageImpl implements PersonalNumberStroage {
 	
 	//정보저장용 객체배열과 인덱스 카운트를 위한 멤버변수 선언
-	PersonalInfoDTO[] personalArr;
+	PersonalInfoVO[] personalArr;
 	int numOfPerInfo;
 	//생성자: 객체배열 생성 및 인덱스 변수 초기화
 	public PersonalNumberStorageImpl(int arrSize) {
-		personalArr = new PersonalInfoDTO[arrSize];
+		personalArr = new PersonalInfoVO[arrSize];
 		numOfPerInfo = 0;
 	}
 	
@@ -68,7 +68,7 @@ class PersonalNumberStorageImpl implements PersonalNumberStroage {
 	@Override
 	public void addPersonalInfo(String juminNum, String name) {
 		//이름과 주민번호를 통해 인스턴스를 생성한 후 배열에 저장한다.
-		personalArr[numOfPerInfo] = new PersonalInfoDTO(name, juminNum);
+		personalArr[numOfPerInfo] = new PersonalInfoVO(name, juminNum);
 		//인덱스로 사용할 변수를 1증가 시킨다.
 		numOfPerInfo++;
 	}

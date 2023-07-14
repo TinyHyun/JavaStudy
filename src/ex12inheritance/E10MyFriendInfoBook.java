@@ -127,7 +127,7 @@ public class E10MyFriendInfoBook {
 		//기능을 담당하는 핸들러 클래스의 인스턴스 생성
 		FriendInfoHandler handler = new FriendInfoHandler(100);
 		
-		while(true) {
+		while (true) {
 			//1. 메뉴 출력
 			menuShow();
 			//2. 사용자는 수행할 기능의 메뉴를 선택한다.
@@ -195,7 +195,7 @@ class FriendInfoHandler {
 		System.out.print("주소: "); iAddr = scan.nextLine();
 		
 		//입력선택에 따라 고딩 혹은 대딩으로 분기하여 입력받는다.
-		if(choice == 1) { //고딩
+		if (choice == 1) { //고딩
 			//고딩을 선택한 경우 별명을 추가로 입력받는다.
 			System.out.print("별명: "); iNuckname = scan.nextLine();
 			//High 인스턴스를 생성한 후 참조변수에 저장한다.
@@ -207,7 +207,7 @@ class FriendInfoHandler {
 			*/
 			myFriends[numOfFriends++] = high; // => 0번 인덱스에 먼저 저장되고 나서 1증가한다.
 		}
-		else if(choice == 2) { //대딩
+		else if (choice == 2) { //대딩
 			//대딩을 선택한 경우 전공을 추가로 입력받는다.
 			System.out.print("전공: "); iMajor = scan.nextLine();
 			//인스턴스를 생성과 동시에 배열에 추가한다.
@@ -310,9 +310,9 @@ class FriendInfoHandler {
 		int deletIndex = -1;
 		
 		//삭제할 데이터를 찾기위해 저장된 갯수만큼 반복한다.
-		for(int i=0; i<numOfFriends ; i++) {
+		for (int i=0; i<numOfFriends ; i++) {
 			//입력된 이름과 일치하는지 확인한다.
-			if(deletName.compareTo(myFriends[i].name)==0){
+			if (deletName.compareTo(myFriends[i].name)==0){
 				/*
 				인스턴스 배열에서 삭제는 null로 변경하면 된다.
 				참조값이 null이라는 것은 참조할 인스턴스가 없다는 의미이므로 삭제한 것과 동일한 결과가 된다.
@@ -328,15 +328,15 @@ class FriendInfoHandler {
 		}
 		
 		//검색된 데이터가 없다면 -1을 유지한다.
-		if(deletIndex == -1) {
+		if (deletIndex == -1) {
 			System.out.println("==삭제된 데이터가 없습니다.==");
-		}
+		} 
 		else {
 			/*
 			인스턴스 배열에서 원소를 삭제한 후 바로 뒤에 있는 원소를 앞으로 하나씩 복사한다.
 			만약 이 부분이 처리되지 않는다면 차후 검색이나 삭제시 nullPointException이 발생할 수 있다.
 			*/
-			for(int i=deletIndex ; i<numOfFriends ; i++) {
+			for (int i=deletIndex ; i<numOfFriends ; i++) {
 				myFriends[i] = myFriends[i+1];
 			}
 			//삭제한 결과를 출력한다.

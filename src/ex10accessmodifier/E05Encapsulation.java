@@ -77,6 +77,7 @@ public class E05Encapsulation {
 		//아래 메서드 호출을 통해 업무를 순서에 맞게 진행할 수 있다. (업무의 캡슐화)
 		System.out.println("캡슐화 이후 코드");
 		new EncapsulLogic().doProcess();
+		
 	}
 
 }
