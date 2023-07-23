@@ -1,5 +1,7 @@
 package quiz;
 
+import java.util.Scanner;
+
 /*
 게임설명 : 업다운게임을 메소드를 이용해 구현한다.
 컴퓨터는 1~100사이의 숫자 하나를 생성한다.
@@ -16,6 +18,53 @@ public class T_QuUpDownGame {
 
 	public static void main(String[] args) {
 
+		boolean gameCount = false;
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			int comNum = (int)(Math.random() * 100) + 1;
+			
+			for(int i=1 ; i<=7 ; i++) {
+				System.out.print("1~100까지의 정수를 입력하세요: ");
+				int userNum = scan.nextInt();
+				
+				if(userNum < comNum) {
+					System.out.println("Up");
+				}
+				else if(userNum > comNum) {
+					System.out.println("Down");
+				}
+				else {
+					System.out.println("일치합니다!");
+					gameCount = true;
+					break;
+				}
+			}
+			
+			if(gameCount == false) {
+				System.out.println("실패");
+			}
+			
+			while(true) {
+				System.out.println("==========================");
+				System.out.print("게임을 재시작 하시겠습니까? 게임재시작(1), 게임종료(0): ");
+				
+				int reStart = scan.nextInt();
+				
+				if(reStart == 0) {
+					System.out.println("게임 종료");
+					return;
+				}
+				else if(reStart == 1) {
+					System.out.println("게임 재시작");
+					break;
+				}
+				else {
+					System.out.println("잘못입력함");
+				}
+				scan.nextLine();
+			}
+		}
 		
 	}
 

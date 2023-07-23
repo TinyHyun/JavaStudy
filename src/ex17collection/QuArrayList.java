@@ -41,18 +41,36 @@ public class QuArrayList {
 		list.add(st4);
 			
 		//1.검색할 이름을 입력받음
-		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("검색할 이름을 입력하세요: ");
+		String seachNaem = scan.nextLine();
 		
 		//2.확장for문으로 컬렉션 전체를 접근
+		int index = -1;
 		
-		
+		for(Student stu : list) {
+			if(stu.getName().equals(seachNaem)) {
+				index = list.indexOf(stu);
+			}
+		}
 		//3.검색결과 유/무에 따라 
 		//검색결과 있을때…검색된 데이터 삭제
 		//검색결과 없을때...검색결과가 없다고 출력
-	
-		
+		if(index == -1) {
+			System.out.println("검색결과가 없습니다.");
+		}
+		else {
+			Student st = list.remove(index);
+			System.out.println("다음 정보가 삭제되었습니다.");
+			System.out.println(st);
+		}
 		//4.전체정보 출력
-		
+		System.out.println("전체 정보를 출력합니다.");
+		Iterator<Student> itr = list.iterator();
+		while(itr.hasNext()) {
+			Student s = itr.next();
+			System.out.println(s);
+		}
 	}
 
 }

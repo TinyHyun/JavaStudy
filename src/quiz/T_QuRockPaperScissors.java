@@ -1,6 +1,5 @@
 package quiz;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /*
@@ -42,13 +41,118 @@ public class T_QuRockPaperScissors {
 
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		Random random = new Random();
 		int gameCount = 0;
 		
-		while (true) {
-			int com = random.nextInt(10000) % 3 + 1;
+		while(true) {
+			System.out.print("무엇을 내겠습니까?(1:가위 2:바위 3:보): ");
+			
+			Scanner scan = new Scanner(System.in);
+			
+			int userNum = scan.nextInt();
+			int comNum = (int)(Math.random() * 3) + 1;
+			
+			if(!(userNum<1 || userNum>3)) {
+				if(userNum==1 && comNum==1) {
+					System.out.println("사용자:가위,컴퓨터:가위");
+					System.out.println("비겼습니다.");
+				}
+				if(userNum==1 && comNum==2) {
+					System.out.println("사용자:가위,컴퓨터:바위");
+					System.out.println("졌습니다.");
+				}
+				if(userNum==1 && comNum==3) {
+					System.out.println("사용자:가위,컴퓨터:보");
+					System.out.println("이겼습니다.");
+				}
+				
+				//////////////////////////////////////////////////////////////////
+				
+				if(userNum==2 && comNum==1) {
+					System.out.println("사용자:바위,컴퓨터:가위");
+					System.out.println("이겼습니다.");
+				}
+				if(userNum==2 && comNum==2) {
+					System.out.println("사용자:바위,컴퓨터:바위");
+					System.out.println("비겼습니다.");
+				}
+				if(userNum==2 && comNum==3) {
+					System.out.println("사용자:바위,컴퓨터:보");
+					System.out.println("졌습니다.");
+				}
+				
+				///////////////////////////////////////////////////////////////////
+				
+				if(userNum==3 && comNum==1) {
+					System.out.println("사용자:보,컴퓨터:가위");
+					System.out.println("졌습니다.");
+				}
+				if(userNum==3 && comNum==2) {
+					System.out.println("사용자:보,컴퓨터:바위");
+					System.out.println("이겼습니다.");
+				}
+				if(userNum==3 && comNum==3) {
+					System.out.println("사용자:보,컴퓨터:보");
+					System.out.println("비겼습니다.");
+				}
+				
+				gameCount++;
+			}
+			else {
+				System.out.println("가위바위보 할 줄 모르세요?");
+			}
+			
+			if(gameCount >= 5) {
+				System.out.print("게임재시작(1), 종료(0): ");
+				int reStart = scan.nextInt();
+				
+				if(reStart == 0) {
+					System.out.println("게임이 종료됩니다.");
+					break;
+				}
+				else {
+					System.out.println("게임 재시작");
+					gameCount = 0;
+				}
+			}
 		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

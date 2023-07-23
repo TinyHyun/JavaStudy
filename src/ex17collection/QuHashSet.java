@@ -22,6 +22,7 @@ Avengers [본명=브루스배너, 닉네임=헐크, 능력=강한피부&점프]
 
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Scanner;
 
 class Avengers {
@@ -44,22 +45,25 @@ class Avengers {
 
 	@Override
 	public int hashCode() {
+		int retCode1 = this.name.hashCode() + this.heroName.hashCode() + this.weapon.hashCode();
 		
-		return name.hashCode();
+		int retCode2 = Objects.hash(this.name, this.heroName, this.weapon);
+		
+		return retCode1;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		
-		System.out.println("중복 제거용 equals() 메소드 호출");
-		Avengers aven = (Avengers)obj;
-		if(this.name.equals(aven.name)) {
+		Avengers av = (Avengers)obj;
+		if(av.name.equals(this.name) 
+				&& av.heroName.equals(this.heroName) && av.weapon.equals(this.weapon)) {
 			return true;
 		}
 		else {
 			return false;
 		}
 	}
+	
 	
 }
 
@@ -85,14 +89,22 @@ public class QuHashSet {
 			System.out.println(av.toString());			
 		}
 		
-		boolean isFind = false;
 		Scanner scan = new Scanner(System.in);
 		System.out.println("검색할 이름을 입력하세요.");
 		String searchName = scan.nextLine();
 		
+		boolean isFind = false;
+		
 		Iterator<Avengers> itr = set.iterator();
 		while (itr.hasNext()) {
-			Avengers objects = itr.next();
+			Avengers aven = itr.next();
+			if(searchName.equals(aven.name)) {
+				System.out.println(aven);
+				isFind = true;
+			}
+		}
+		if(isFind == false) {
+			System.out.println("해당 영운은 없습니다.");
 		}
 	}
 }
