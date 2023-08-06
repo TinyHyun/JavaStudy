@@ -1,6 +1,6 @@
 package ex00study;
 
-public class Cooromi {
+public class Kuromi {
 	
 	public static void main(String[] args) {
 		
