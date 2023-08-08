@@ -12,8 +12,8 @@ import java.util.Scanner;
 */
 
 class AgeErrorException extends Exception {
-	public AgeErrorException() {
-		super("나이 입력이 잘못되었습니다.");
+	public AgeErrorException(String str) {
+		super(str);
 	}
 }
 
@@ -55,7 +55,7 @@ public class Ex06DeveloperDefine {
 		개발자가 정의한 예외객체를 생성한 후 직접 throw한다.
 		*/
 		if(inputAge<0) {
-			AgeErrorException ex = new AgeErrorException();
+			AgeErrorException ex = new AgeErrorException("나이 입력이 잘못되었습니다.");
 			/*
 			예외객체를 throw하면 즉시 에러가 발생된다.
 			이를 반드시 catch해야되고 그렇지 않으면 JVM에 의해 예외객체가
