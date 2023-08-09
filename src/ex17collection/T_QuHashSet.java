@@ -32,7 +32,6 @@ class Avengers1 {
 	String weapon;
 
 	public Avengers1(String name, String heroName, String weapon) {
-		super();
 		this.name = name;
 		this.heroName = heroName;
 		this.weapon = weapon;

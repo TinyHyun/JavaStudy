@@ -24,14 +24,14 @@ class ShowThread extends Thread {
 	@Override
 	public void run() {
 		//100번 반복 실행한다.
-		for(int i=1 ; i<=100 ; i++) {
+		for(int i=1 ; i<=10 ; i++) {
 			System.out.println("안녕하세요.["+threadName+"]입니다.");
 			/*
 			Thread 클래스인 static메서드인 sleep()을 통해 실행의 흐름을 주어진 시간만큼 block상태로 전환시켜준다. 
 			1000분의 1초 단위로 기술하게되므로 아래는 0.01초만큼 block 시키게된다.
 			*/
 			try {
-				sleep(10);
+				sleep(1000);
 			}
 			catch (InterruptedException e) {
 				e.printStackTrace();
